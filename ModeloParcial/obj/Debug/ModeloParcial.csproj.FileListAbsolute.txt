@@ -1,0 +1,11 @@
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\bin\Debug\ModeloParcial.exe.config
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\bin\Debug\ModeloParcial.exe
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\bin\Debug\ModeloParcial.pdb
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\obj\Debug\ModeloParcial.csproj.AssemblyReference.cache
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\obj\Debug\ModeloParcial.csproj.SuggestedBindingRedirects.cache
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\obj\Debug\ModeloParcial.Properties.Resources.resources
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\obj\Debug\ModeloParcial.csproj.GenerateResource.cache
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\obj\Debug\ModeloParcial.csproj.CoreCompileInputs.cache
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\obj\Debug\ModeloParcial.exe
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\obj\Debug\ModeloParcial.pdb
+C:\Users\joshu\Documents\PAV\practica\ModeloParcial\obj\Debug\ModeloParcial.formAltaMateriasAlumno.resources
