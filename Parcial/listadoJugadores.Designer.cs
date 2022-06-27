@@ -58,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(643, 450);
             this.Controls.Add(this.reporteJugadores);
             this.Name = "listadoJugadores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listadoJugadores";
             this.Load += new System.EventHandler(this.listadoJugadores_Load);
             this.ResumeLayout(false);

@@ -117,17 +117,19 @@ namespace Parcial
 
         private void btnConfirmarEquipo_Click(object sender, EventArgs e)
         {
-            List<int> listajugadores = new List<int>();
-
-            for (int i = 0; i < grillaEquipo.Rows.Count; i++)
-            {
-                listajugadores.Add(int.Parse(grillaEquipo.Rows[i].Cells[0].Value.ToString()));
-            }
-
-            bool resultado = DAO.Acceso.AltaJugadoresXEquipo(int.Parse(txtNroNuevoEquipo.Text) ,txtNombreDeEquipo.Text.Trim(), listajugadores);
-
             if(grillaEquipo.Rows.Count > 0)
             {
+
+                List<int> listajugadores = new List<int>();
+
+                for (int i = 0; i < grillaEquipo.Rows.Count; i++)
+                {
+                    listajugadores.Add(int.Parse(grillaEquipo.Rows[i].Cells[0].Value.ToString()));
+                }
+
+                bool resultado = DAO.Acceso.AltaJugadoresXEquipo(int.Parse(txtNroNuevoEquipo.Text), txtNombreDeEquipo.Text.Trim(), listajugadores);
+
+
                 if (VerificarDatosEquipoCompletos())
                 {
                     if (resultado)
@@ -141,6 +143,7 @@ namespace Parcial
                     }
                 }            
             }
+
             else
             {
                 MessageBox.Show("No hay jugadores cargados en la grilla", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -154,12 +157,13 @@ namespace Parcial
             cmbCategorias.SelectedIndex = -1;
             cmbPosicion.SelectedIndex = -1;
             txtNombreDeEquipo.Text = "";
+            txtNombreDeEquipo.Focus();  
             txtNombreJugador.Text = "";
             txtFecha.Text = DateTime.Now.ToShortDateString();
             int id = DAO.Acceso.ObtenerUltimoIdEquipo();
             txtNroNuevoEquipo.Text = (id + 1).ToString();
             txtNroJugador.Text = "";
-            grillaEquipo.Rows.Clear();
+            grillaEquipo.Rows.Clear();      
         }
     }
 }
