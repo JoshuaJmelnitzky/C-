@@ -137,6 +137,7 @@ namespace ModeloParcial
             }
         }
 
+
         private bool VerificarAlumnoMateria()
         {
             foreach (DataGridViewRow fila in grillaMaterias.Rows)
