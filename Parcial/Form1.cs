@@ -22,7 +22,7 @@ namespace Parcial
             // Carga de combo categorias
             cargarComboCategorias();
 
-            // Carga de cobmo posiciones
+            // Carga de combo posiciones
             cargarComboPosiciones();
 
             // Carga de fecha

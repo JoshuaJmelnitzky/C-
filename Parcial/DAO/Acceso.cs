@@ -92,7 +92,7 @@ namespace Parcial.DAO
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "SELECT (MAX) Id FROM Equipos";
+                string consulta = "SELECT MAX(Id) FROM Equipos";
 
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;

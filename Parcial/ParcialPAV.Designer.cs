@@ -57,14 +57,14 @@
             // altaDeEquipoToolStripMenuItem
             // 
             this.altaDeEquipoToolStripMenuItem.Name = "altaDeEquipoToolStripMenuItem";
-            this.altaDeEquipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altaDeEquipoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.altaDeEquipoToolStripMenuItem.Text = "Alta de Equipo";
             this.altaDeEquipoToolStripMenuItem.Click += new System.EventHandler(this.altaDeEquipoToolStripMenuItem_Click);
             // 
             // reporteToolStripMenuItem
             // 
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.reporteToolStripMenuItem.Text = "Reporte";
             this.reporteToolStripMenuItem.Click += new System.EventHandler(this.reporteToolStripMenuItem_Click);
             // 
@@ -76,6 +76,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ParcialPAV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ParcialPAVcs";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
