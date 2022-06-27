@@ -265,6 +265,7 @@
             // 
             // txtNombreJugador
             // 
+            this.txtNombreJugador.Enabled = false;
             this.txtNombreJugador.Location = new System.Drawing.Point(167, 69);
             this.txtNombreJugador.Name = "txtNombreJugador";
             this.txtNombreJugador.Size = new System.Drawing.Size(100, 20);

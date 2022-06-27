@@ -66,13 +66,16 @@ namespace Parcial
 
         private void btnAgregarJugador_Click(object sender, EventArgs e)
         {
-            if (!verificarJugador())
+            if (VerificarDatosJugadorCompletos())
             {
-                grillaEquipo.Rows.Add(txtNroJugador.Text, txtNombreJugador.Text, (int)cmbPosicion.SelectedValue);
-            }
-            else
-            {
-                MessageBox.Show("Jugador ya agregado");
+                if(!verificarJugador())
+                {
+                    grillaEquipo.Rows.Add(txtNroJugador.Text, txtNombreJugador.Text, (int)cmbPosicion.SelectedValue);
+                }
+                else
+                {
+                    MessageBox.Show("Jugador ya agregado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -89,6 +92,29 @@ namespace Parcial
             return false;
         }
 
+
+        private bool VerificarDatosJugadorCompletos()
+        {
+            if(txtNombreJugador.Text.Equals("") || cmbPosicion.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Complete los datos faltantes", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            return true;
+        }
+
+
+        private bool VerificarDatosEquipoCompletos()
+        {
+            if (txtNombreDeEquipo.Text.Equals("") || cmbCategorias.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Complete los datos faltantes", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            return true;
+        }
+
+
         private void btnConfirmarEquipo_Click(object sender, EventArgs e)
         {
             List<int> listajugadores = new List<int>();
@@ -100,15 +126,40 @@ namespace Parcial
 
             bool resultado = DAO.Acceso.AltaJugadoresXEquipo(int.Parse(txtNroNuevoEquipo.Text) ,txtNombreDeEquipo.Text.Trim(), listajugadores);
 
-            if (resultado)
+            if(grillaEquipo.Rows.Count > 0)
             {
-                MessageBox.Show("Equipo dado de alta con éxito");
+                if (VerificarDatosEquipoCompletos())
+                {
+                    if (resultado)
+                    {
+                        MessageBox.Show("Equipo dado de alta con éxito");
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al dar de alta nuevo equipo");
+                    }
+                }            
             }
             else
             {
-                MessageBox.Show("Error al dar de alta nuevo equipo");
-            }
+                MessageBox.Show("No hay jugadores cargados en la grilla", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }      
 
+        }
+
+
+        private void LimpiarCampos()
+        {
+            cmbCategorias.SelectedIndex = -1;
+            cmbPosicion.SelectedIndex = -1;
+            txtNombreDeEquipo.Text = "";
+            txtNombreJugador.Text = "";
+            txtFecha.Text = DateTime.Now.ToShortDateString();
+            int id = DAO.Acceso.ObtenerUltimoIdEquipo();
+            txtNroNuevoEquipo.Text = (id + 1).ToString();
+            txtNroJugador.Text = "";
+            grillaEquipo.Rows.Clear();
         }
     }
 }
